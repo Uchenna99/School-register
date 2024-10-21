@@ -3,6 +3,6 @@ export enum Brands {
     DELL = 'dell',
     LENOVO = 'lenovo',
     APPLE = 'apple',
-    MICROsOFT = 'microsoft',
+    MICROSOFT = 'microsoft',
     OTHER = 'other'
 }

@@ -4,5 +4,6 @@ export enum Programs {
     FRONT_END_WebDev = 'Front-end',
     BACK_END_WebDev = 'Back-end',
     NETWORKING = 'Networking',
-    CYBER_SECURITY = 'Cyber-security'
+    CYBER_SECURITY = 'Cyber-security',
+    DATA_SCIENCE = 'Data-science'
 }

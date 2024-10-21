@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "firstName": "Tolu",
+    "lastName": "Akinwande",
+    "program": "MERN",
+    "Course": "React",
+    "Teacher": "Mike",
+    "Laptop": "yes",
+    "LaptopBrand": "dell",
+    "Time_In": "9am",
+    "Time_Out": "5pm"
+  },
+  {
+    "Id": 2,
+    "firstName": "Uchenna",
+    "lastName": "Agbu",
+    "program": "MERN",
+    "Course": "Typescript",
+    "Teacher": "Mike",
+    "Laptop": "yes",
+    "LaptopBrand": "hp",
+    "Time_In": "9:30am",
+    "Time_Out": "5:40pm"
+  }
+]

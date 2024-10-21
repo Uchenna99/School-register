@@ -3,7 +3,7 @@ import { Brands } from "./Brands";
 import { Programs } from "./SchoolPrograms";
 import { Teachers } from "./Teachers";
 
-interface LogEntries {
+export interface LogEntries {
     Id: number;
     firstName: string;
     lastName: string;
