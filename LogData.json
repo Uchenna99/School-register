@@ -2,24 +2,36 @@
   {
     "Id": 1,
     "firstName": "Tolu",
-    "lastName": "Akinwande",
+    "lastName": "Obiesie",
     "program": "MERN",
     "Course": "React",
     "Teacher": "Mike",
     "Laptop": "yes",
-    "LaptopBrand": "dell",
+    "LaptopBrand": "apple",
     "Time_In": "9am",
     "Time_Out": "5pm"
   },
   {
     "Id": 2,
     "firstName": "Uchenna",
-    "lastName": "Agbu",
+    "lastName": "Obiesie",
     "program": "MERN",
     "Course": "Typescript",
     "Teacher": "Mike",
     "Laptop": "yes",
-    "LaptopBrand": "hp",
+    "LaptopBrand": "apple",
+    "Time_In": "9:30am",
+    "Time_Out": "5:40pm"
+  },
+  {
+    "Id": 3,
+    "firstName": "Stephanie",
+    "lastName": "Lewis",
+    "program": "MERN",
+    "Course": "Typescript",
+    "Teacher": "Mike",
+    "Laptop": "yes",
+    "LaptopBrand": "lenovo",
     "Time_In": "9:30am",
     "Time_Out": "5:40pm"
   }

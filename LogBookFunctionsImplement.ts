@@ -5,9 +5,6 @@ import fs from "fs"
 
 
 export class LogBookImplement implements LogBookFunctions {
-    sendFile(): string {
-        throw new Error("Method not implemented.");
-    }
 
     retrieveFile(): LogEntries[] {
         const EmployeeFile = fs.readFileSync('LogData.json', 'utf-8')
@@ -38,13 +35,30 @@ export class LogBookImplement implements LogBookFunctions {
             console.log(`Student with Id: ${Id} was not found.`);
         }
     }
-    updateStudent(Id: number, updatedData: Partial<LogEntries>): void {
-        throw new Error("Method not implemented.");
+
+    updateStudent(Id: number, updatedData: Partial<LogEntries>): LogEntries | void {
+        const Data = this.retrieveFile()
+        const findStudent = Data.find((student)=> student.Id === Id)
+        if(findStudent){
+            Object.assign(findStudent, updatedData)
+            console.log('Data updated successfully!');
+            
+        }else{
+            console.log('Student not found!');
+        }
+        const convData = JSON.stringify(Data, null, 2)
+        fs.writeFileSync('LogData.json', convData, "utf8")
+        return findStudent
     }
+
     getStudentById(Id: number): LogEntries | string {
-        throw new Error("Method not implemented.");
+        const Data = this.retrieveFile()
+        const foundStudent = Data.find((student)=> student.Id === Id)
+        if(!foundStudent){
+            return `Employee with Id: ${Id} does not exist`
+        }else{
+            // console.log(foundStudent);
+            return foundStudent
+        }
     }
-    
 }
-
-
