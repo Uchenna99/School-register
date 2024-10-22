@@ -5,14 +5,17 @@ import fs from "fs"
 
 
 export class LogBookImplement implements LogBookFunctions {
+    clearAllData(): string {
+        const empty: string = '[]'
+        fs.writeFileSync('LogData.json', empty, 'utf-8')
+        return 'Deleted successfully!'
+    }
 
     retrieveFile(): LogEntries[] {
         const EmployeeFile = fs.readFileSync('LogData.json', 'utf-8')
         const EmployeeDataFile: LogEntries[] = JSON.parse(EmployeeFile)
         return EmployeeDataFile;
     }
-
-    // private StudentsData: LogEntries[] = []
 
     addStudent(studentEntry: LogEntries):string {
         const EmpFile = this.retrieveFile()
@@ -57,7 +60,6 @@ export class LogBookImplement implements LogBookFunctions {
         if(!foundStudent){
             return `Employee with Id: ${Id} does not exist`
         }else{
-            // console.log(foundStudent);
             return foundStudent
         }
     }

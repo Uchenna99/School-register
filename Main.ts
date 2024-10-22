@@ -44,17 +44,20 @@ const Stud3: LogEntries = {
     Time_Out: '5:40pm'
 } 
 
-// console.log(LogBookFunctions.addStudent(Stud1));
-// console.log(LogBookFunctions.addStudent(Stud2));
-// console.log(LogBookFunctions.addStudent(Stud3));
+console.log(LogBookFunctions.addStudent(Stud1));
+console.log(LogBookFunctions.addStudent(Stud2));
+console.log(LogBookFunctions.addStudent(Stud3));
 
-// LogBookFunctions.removeStudent(2)
+// LogBookFunctions.removeStudent(1)
 
 // console.log(LogBookFunctions.retrieveFile());
 
-console.log(LogBookFunctions.updateStudent(1, {lastName: 'Obiesie', program: Programs.MERN_FullStack, LaptopBrand:Brands.APPLE}));
+// console.log(LogBookFunctions.updateStudent(1, {lastName: 'Obiesie', program: Programs.MERN_FullStack, LaptopBrand:Brands.APPLE}));
 
 // console.log(LogBookFunctions.getStudentById(1));
+
+// console.log(LogBookFunctions.clearAllData());
+
 
 
 

@@ -4,10 +4,10 @@ exports.Programs = void 0;
 var Programs;
 (function (Programs) {
     Programs["ADSE"] = "ADSE";
-    Programs["MERN_FullStack"] = "MERN";
-    Programs["FRONT_END_WebDev"] = "Front-end";
-    Programs["BACK_END_WebDev"] = "Back-end";
+    Programs["MERN_FullStack"] = "MERN_FullStack";
+    Programs["FRONT_END_WebDev"] = "Front-End";
+    Programs["BACK_END_WebDev"] = "Back-End";
     Programs["NETWORKING"] = "Networking";
-    Programs["CYBER_SECURITY"] = "Cyber-security";
-    Programs["DATA_SCIENCE"] = "Data-science";
+    Programs["CYBER_SECURITY"] = "Cyber-Security";
+    Programs["DATA_SCIENCE"] = "Data-Science";
 })(Programs || (exports.Programs = Programs = {}));

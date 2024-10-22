@@ -6,12 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogBookImplement = void 0;
 const fs_1 = __importDefault(require("fs"));
 class LogBookImplement {
+    clearAllData() {
+        const empty = '[]';
+        fs_1.default.writeFileSync('LogData.json', empty, 'utf-8');
+        return 'Deleted successfully!';
+    }
     retrieveFile() {
         const EmployeeFile = fs_1.default.readFileSync('LogData.json', 'utf-8');
         const EmployeeDataFile = JSON.parse(EmployeeFile);
         return EmployeeDataFile;
     }
-    // private StudentsData: LogEntries[] = []
     addStudent(studentEntry) {
         const EmpFile = this.retrieveFile();
         EmpFile.push(studentEntry);
@@ -53,7 +57,6 @@ class LogBookImplement {
             return `Employee with Id: ${Id} does not exist`;
         }
         else {
-            // console.log(foundStudent);
             return foundStudent;
         }
     }
