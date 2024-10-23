@@ -1,38 +1,38 @@
 [
   {
     "Id": 1,
-    "firstName": "Tolu",
-    "lastName": "Akinwande",
-    "program": "MERN_FullStack",
-    "Course": "React",
-    "Teacher": "Mike",
-    "Laptop": "yes",
-    "LaptopBrand": "DELL",
+    "firstName": "Uchenna",
+    "lastName": "Agbu",
+    "program": "MERN",
+    "Teacher": "Mr Mike",
+    "Course": "Typescript",
+    "Laptop": "Yes",
+    "LaptopBrand": "HP",
     "Time_In": "9am",
     "Time_Out": "5pm"
   },
   {
-    "Id": 2,
-    "firstName": "Uchenna",
-    "lastName": "Agbu",
-    "program": "MERN_FullStack",
-    "Course": "Typescript",
-    "Teacher": "Mike",
-    "Laptop": "yes",
-    "LaptopBrand": "HP",
-    "Time_In": "9:30am",
-    "Time_Out": "5:40pm"
-  },
-  {
-    "Id": 3,
+    "Id": 1,
     "firstName": "Stephanie",
     "lastName": "Lewis",
-    "program": "MERN_FullStack",
-    "Course": "Typescript",
-    "Teacher": "Mike",
-    "Laptop": "yes",
-    "LaptopBrand": "LENOVO",
+    "program": "MERN",
+    "Teacher": "Mr Mike",
+    "Course": "TS",
+    "Laptop": "YEs",
+    "LaptopBrand": "DELL",
     "Time_In": "9:30am",
+    "Time_Out": "4pm"
+  },
+  {
+    "Id": 1,
+    "firstName": "Uche",
+    "lastName": "Obiesie",
+    "program": "ADSE",
+    "Teacher": "Mr Kingsley",
+    "Course": "C++",
+    "Laptop": "yes",
+    "LaptopBrand": "Apple",
+    "Time_In": "9am",
     "Time_Out": "5:40pm"
   }
 ]

@@ -10,6 +10,10 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/node": "^22.7.7"
+    "@types/node": "^22.7.7",
+    "@types/prompt-sync": "^4.2.3"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
   }
 }

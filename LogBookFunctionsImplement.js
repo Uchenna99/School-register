@@ -6,35 +6,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogBookImplement = void 0;
 const fs_1 = __importDefault(require("fs"));
 class LogBookImplement {
-    clearAllData() {
-        const empty = '[]';
-        fs_1.default.writeFileSync('LogData.json', empty, 'utf-8');
-        return 'Deleted successfully!';
+    saveData(Data) {
+        const convData = JSON.stringify(Data, null, 2);
+        fs_1.default.writeFileSync('LogData.json', convData, "utf8");
     }
     retrieveFile() {
         const EmployeeFile = fs_1.default.readFileSync('LogData.json', 'utf-8');
         const EmployeeDataFile = JSON.parse(EmployeeFile);
         return EmployeeDataFile;
     }
-    addStudent(studentEntry) {
-        const EmpFile = this.retrieveFile();
-        EmpFile.push(studentEntry);
-        const jsonData = JSON.stringify(EmpFile, null, 2);
-        fs_1.default.writeFileSync('LogData.json', jsonData, 'utf-8');
-        return 'Saved successfully!';
-    }
-    removeStudent(Id) {
-        const Data = this.retrieveFile();
-        const check = Data.findIndex((student) => student.Id === Id);
-        if (check > -1) {
-            Data.splice(check, 1);
-            console.log(`Student with Id: ${Id} has been deleted.`);
-            const convData = JSON.stringify(Data, null, 2);
-            fs_1.default.writeFileSync('LogData.json', convData, "utf8");
-        }
-        else {
-            console.log(`Student with Id: ${Id} was not found.`);
-        }
+    clearAllData() {
+        const empty = '[]';
+        fs_1.default.writeFileSync('LogData.json', empty, 'utf-8');
+        return 'Deleted successfully!';
     }
     updateStudent(Id, updatedData) {
         const Data = this.retrieveFile();
@@ -50,11 +34,31 @@ class LogBookImplement {
         fs_1.default.writeFileSync('LogData.json', convData, "utf8");
         return findStudent;
     }
+    addStudent(studentEntry) {
+        const EmpFile = this.retrieveFile();
+        EmpFile.push(studentEntry);
+        const jsonData = JSON.stringify(EmpFile, null, 2);
+        fs_1.default.writeFileSync('LogData.json', jsonData, 'utf-8');
+        console.log('Info saved successfully!');
+    }
+    removeStudent(Id) {
+        const Data = this.retrieveFile();
+        const check = Data.findIndex((student) => student.Id === Id);
+        if (check > -1) {
+            Data.splice(check, 1);
+            console.log(`Student with Id: ${Id} has been deleted.`);
+            const convData = JSON.stringify(Data, null, 2);
+            fs_1.default.writeFileSync('LogData.json', convData, "utf8");
+        }
+        else {
+            console.log(`Student with Id: ${Id} was not found.`);
+        }
+    }
     getStudentById(Id) {
         const Data = this.retrieveFile();
         const foundStudent = Data.find((student) => student.Id === Id);
         if (!foundStudent) {
-            return `Employee with Id: ${Id} does not exist`;
+            return `Student with Id: ${Id} does not exist`;
         }
         else {
             return foundStudent;

@@ -1,16 +1,21 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const Binary_1 = require("./Binary");
 const Brands_1 = require("./Brands");
 const LogBookFunctionsImplement_1 = require("./LogBookFunctionsImplement");
 const SchoolPrograms_1 = require("./SchoolPrograms");
 const Teachers_1 = require("./Teachers");
+const prompt_sync_1 = __importDefault(require("prompt-sync"));
 const LogBookFunctions = new LogBookFunctionsImplement_1.LogBookImplement();
 const Stud1 = {
     Id: 1,
     firstName: 'Tolu',
     lastName: 'Akinwande',
-    program: SchoolPrograms_1.Programs.MERN_FullStack, Course: 'React',
+    program: SchoolPrograms_1.Programs.MERN_FullStack,
+    Course: 'React',
     Teacher: Teachers_1.Teachers.MR_MIKE,
     Laptop: Binary_1.Binary.YES,
     LaptopBrand: Brands_1.Brands.DELL,
@@ -21,7 +26,8 @@ const Stud2 = {
     Id: 2,
     firstName: 'Uchenna',
     lastName: 'Agbu',
-    program: SchoolPrograms_1.Programs.MERN_FullStack, Course: 'Typescript',
+    program: SchoolPrograms_1.Programs.MERN_FullStack,
+    Course: 'Typescript',
     Teacher: Teachers_1.Teachers.MR_MIKE,
     Laptop: Binary_1.Binary.YES,
     LaptopBrand: Brands_1.Brands.HP,
@@ -40,11 +46,85 @@ const Stud3 = {
     Time_In: '9:30am',
     Time_Out: '5:40pm'
 };
-console.log(LogBookFunctions.addStudent(Stud1));
-console.log(LogBookFunctions.addStudent(Stud2));
-console.log(LogBookFunctions.addStudent(Stud3));
-// LogBookFunctions.removeStudent(2)
+// console.log(LogBookFunctions.addStudent(Stud1));
+// console.log(LogBookFunctions.addStudent(Stud2));
+// console.log(LogBookFunctions.addStudent(Stud3));
+// LogBookFunctions.removeStudent(1)
 // console.log(LogBookFunctions.retrieveFile());
 // console.log(LogBookFunctions.updateStudent(1, {lastName: 'Obiesie', program: Programs.MERN_FullStack, LaptopBrand:Brands.APPLE}));
 // console.log(LogBookFunctions.getStudentById(1));
 // console.log(LogBookFunctions.clearAllData());
+// console.log('--------ATTENDANCE APP---------');
+// console.log("[1]   Display all students");
+// console.log("[2]   Add new student");
+// const fs = require('fs')
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+// });
+// rl.question('What is your name? : ', (userInput: string)=>{
+//     console.log('Okay');
+// })
+// const lines: string[] = [];
+// rl.on('line', (line: string)=>{lines.push(line)})
+// rl.on('close', ()=>{console.log(lines);
+// })
+const prompt = (0, prompt_sync_1.default)();
+const Welcome = () => {
+    console.log("*******Welcome to Aptech******");
+    console.log("Please select an option below.");
+    console.log('1  To sign in');
+    console.log('2  To find a student');
+    console.log('3  To delete a student');
+    console.log('4  To view all students');
+};
+Welcome();
+const openingPrompt = parseInt(prompt('Input a number to proceed : '));
+switch (openingPrompt) {
+    case 1:
+        const firstName = prompt('Enter your first name : ');
+        const lastName = prompt('Enter your last name : ');
+        const program = prompt('What Program are you enrolled in? : ');
+        const course = prompt('What subject are you currently learning? : ');
+        const teacher = prompt("Your teacher's name : ");
+        const laptop = prompt('Do you have a laptop? : ');
+        const brand = prompt('Do you have a laptop? : ');
+        const time_in = prompt('Time in : ');
+        const time_out = prompt('Time out : ');
+        const studentData = {
+            Id: 1,
+            firstName: firstName,
+            lastName: lastName,
+            program: program,
+            Teacher: teacher,
+            Course: course,
+            Laptop: laptop,
+            LaptopBrand: brand,
+            Time_In: time_in,
+            Time_Out: time_out
+        };
+        LogBookFunctions.addStudent(studentData);
+        const goAgain = prompt('Would you like to do something else?');
+        if (goAgain.toLowerCase().trim() == 'yes') {
+            Welcome();
+        }
+        else {
+            console.log('Alright then, go your class!!!');
+        }
+        break;
+    case 2:
+        const Id = parseInt(prompt('Enter the Id number of the student : '));
+        console.log(LogBookFunctions.getStudentById(Id));
+        break;
+    default:
+        break;
+}
+// console.log(LogBookFunctions.addStudent(studentData));
+// const options = prompt("Enter option: ")
+// switch (options) {
+//     case value:
+//         break;
+//     default:
+//         break;
+// }

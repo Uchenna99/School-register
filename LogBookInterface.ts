@@ -7,11 +7,11 @@ export interface LogEntries {
     Id: number;
     firstName: string;
     lastName: string;
-    program: Programs;
+    program: string;
     Course: string;
-    Teacher: Teachers;
-    Laptop: Binary;
-    LaptopBrand: Brands;
+    Teacher: string;
+    Laptop: string;
+    LaptopBrand: string;
     Time_In: string;
     Time_Out: string;
 }

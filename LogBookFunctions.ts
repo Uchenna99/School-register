@@ -2,9 +2,10 @@ import { LogEntries } from "./LogBookInterface";
 
 export interface LogBookFunctions {
     retrieveFile(): object[],
-    addStudent(studentEntry: LogEntries):string,
+    addStudent(studentEntry: LogEntries):void,
     removeStudent(Id: number): void,
-    clearAllData():string
+    clearAllData():string,
     updateStudent(Id: number, updatedData: Partial<LogEntries>): LogEntries | void,
-    getStudentById(Id: number): LogEntries | string
+    getStudentById(Id: number): LogEntries | string,
+    saveData(Data: any):void
 }
