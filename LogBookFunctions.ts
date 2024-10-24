@@ -6,6 +6,6 @@ export interface LogBookFunctions {
     removeStudent(Id: number): void,
     clearAllData():string,
     updateStudent(Id: number, updatedData: Partial<LogEntries>): LogEntries | void,
-    getStudentById(Id: number): LogEntries | string,
+    getStudentById(name: string):void,
     saveData(Data: any):void
 }

@@ -34,5 +34,101 @@
     "LaptopBrand": "Apple",
     "Time_In": "9am",
     "Time_Out": "5:40pm"
+  },
+  {
+    "Id": 1,
+    "firstName": "uche",
+    "lastName": "Nnamdi",
+    "program": "Web",
+    "Teacher": "Mr Kingsley",
+    "Course": "React",
+    "Laptop": "yes",
+    "LaptopBrand": "hp",
+    "Time_In": "10am",
+    "Time_Out": "6pm"
+  },
+  {
+    "Id": 1,
+    "firstName": "lhlfksd",
+    "lastName": "lksjdklfjs",
+    "program": "kjksdjag",
+    "Teacher": "jkhajkh",
+    "Course": "jnajkg",
+    "Laptop": "kjhlajk",
+    "LaptopBrand": "khakr",
+    "Time_In": "kjherka",
+    "Time_Out": "rfs"
+  },
+  {
+    "Id": 1,
+    "firstName": "dgsds",
+    "lastName": "sdsd",
+    "program": "dsfa",
+    "Teacher": "sdfas",
+    "Course": "sfsasd",
+    "Laptop": "dfds",
+    "LaptopBrand": "dfr",
+    "Time_In": "weawef",
+    "Time_Out": "aefa"
+  },
+  {
+    "Id": 1,
+    "firstName": "sefasdfae",
+    "lastName": "sfas",
+    "program": "eaE",
+    "Teacher": "efawe",
+    "Course": "efsfa",
+    "Laptop": "esffwf",
+    "LaptopBrand": "efsafe",
+    "Time_In": "eff",
+    "Time_Out": "EWFWFA"
+  },
+  {
+    "Id": 1,
+    "firstName": "SDFSF",
+    "lastName": "SDRGDS",
+    "program": "DR",
+    "Teacher": "D",
+    "Course": "G",
+    "Laptop": "DFGSD",
+    "LaptopBrand": "DRSGD",
+    "Time_In": "DSG",
+    "Time_Out": ""
+  },
+  {
+    "Id": 1,
+    "firstName": null,
+    "lastName": null,
+    "program": "d",
+    "Teacher": "dd",
+    "Course": "d",
+    "Laptop": "d",
+    "LaptopBrand": "dd",
+    "Time_In": "d",
+    "Time_Out": "dd"
+  },
+  {
+    "Id": 1,
+    "firstName": "s",
+    "lastName": "",
+    "program": "",
+    "Teacher": "",
+    "Course": "",
+    "Laptop": "ss",
+    "LaptopBrand": "",
+    "Time_In": "s",
+    "Time_Out": "s"
+  },
+  {
+    "Id": 1,
+    "firstName": "ks",
+    "lastName": "ss",
+    "program": "s",
+    "Teacher": "s",
+    "Course": "s",
+    "Laptop": "ss",
+    "LaptopBrand": "s",
+    "Time_In": "s",
+    "Time_Out": "s"
   }
 ]

@@ -54,15 +54,26 @@ class LogBookImplement {
             console.log(`Student with Id: ${Id} was not found.`);
         }
     }
-    getStudentById(Id) {
+    getStudentById(name) {
         const Data = this.retrieveFile();
-        const foundStudent = Data.find((student) => student.Id === Id);
-        if (!foundStudent) {
-            return `Student with Id: ${Id} does not exist`;
+        const foundStudents = [];
+        Data.forEach((student) => {
+            var _a, _b;
+            ((_a = student.firstName) === null || _a === void 0 ? void 0 : _a.toLowerCase()) == name.toLowerCase() ||
+                ((_b = student.lastName) === null || _b === void 0 ? void 0 : _b.toLowerCase()) == name.toLowerCase() ? foundStudents.push(`${student.firstName} ${student.lastName}`) : '';
+        });
+        if (foundStudents[0]) {
+            console.log(`Students fond :  ${foundStudents}`);
         }
         else {
-            return foundStudent;
+            console.log('No student found');
         }
+        // const foundStudent = Data.find((student)=> student.Id === Id)
+        // if(!foundStudent){
+        //     return `Student with Id: ${Id} does not exist`
+        // }else{
+        //     return foundStudent
+        // }
     }
 }
 exports.LogBookImplement = LogBookImplement;

@@ -5,13 +5,13 @@ import { Teachers } from "./Teachers";
 
 export interface LogEntries {
     Id: number;
-    firstName: string;
-    lastName: string;
-    program: string;
-    Course: string;
-    Teacher: string;
-    Laptop: string;
-    LaptopBrand: string;
-    Time_In: string;
-    Time_Out: string;
+    firstName: string | null;
+    lastName: string | null;
+    program: string | null;
+    Course: string | null;
+    Teacher: string | null;
+    Laptop: string | null;
+    LaptopBrand: string | null;
+    Time_In: string | null;
+    Time_Out: string | null;
 }

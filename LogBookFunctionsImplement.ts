@@ -61,13 +61,28 @@ export class LogBookImplement implements LogBookFunctions {
         }
     }
 
-    getStudentById(Id: number): LogEntries | string {
+    getStudentById(name: string) {
         const Data = this.retrieveFile()
-        const foundStudent = Data.find((student)=> student.Id === Id)
-        if(!foundStudent){
-            return `Student with Id: ${Id} does not exist`
+        const foundStudents: any = []
+        Data.forEach((student)=>{
+            student.firstName?.toLowerCase() == name.toLowerCase() || 
+            student.lastName?.toLowerCase() == name.toLowerCase() ? foundStudents.push(`${student.firstName} ${student.lastName}`) : '';
+        })
+        if(foundStudents[0]){
+            console.log(`Students fond :  ${foundStudents}`);
         }else{
-            return foundStudent
+            console.log('No student found');
+            
         }
+        
+        
+        
+
+        // const foundStudent = Data.find((student)=> student.Id === Id)
+        // if(!foundStudent){
+        //     return `Student with Id: ${Id} does not exist`
+        // }else{
+        //     return foundStudent
+        // }
     }
 }

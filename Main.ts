@@ -1,12 +1,13 @@
 import { Binary } from "./Binary";
 import { Brands } from "./Brands";
+import { goAgain, option1, WelcomeMessage } from "./Console";
 import { LogBookImplement } from "./LogBookFunctionsImplement";
 import { LogEntries } from "./LogBookInterface";
 import { Programs } from "./SchoolPrograms";
 import { Teachers } from "./Teachers";
 import PromptSync, * as promptSync from "prompt-sync"
 
-const LogBookFunctions = new LogBookImplement()
+export const LogBookFunctions = new LogBookImplement()
 
 const Stud1: LogEntries = {
     Id: 1, 
@@ -97,60 +98,51 @@ const Stud3: LogEntries = {
 const prompt = PromptSync()
 
 
-const Welcome =()=>{
-    console.log("*******Welcome to Aptech******");
-    console.log("Please select an option below.");
-    console.log('1  To sign in');
-    console.log('2  To find a student');
-    console.log('3  To delete a student');
-    console.log('4  To view all students');
-}
-Welcome();
+
+WelcomeMessage()
 
 const openingPrompt = parseInt(prompt('Input a number to proceed : '))
+const nums = '1234'
 
-switch (openingPrompt) {
+do { switch (openingPrompt) {
     case 1 :
-        const firstName = prompt('Enter your first name : ')
-        const lastName = prompt('Enter your last name : ')
-        const program = prompt('What Program are you enrolled in? : ')
-        const course = prompt('What subject are you currently learning? : ')
-        const teacher = prompt("Your teacher's name : ")
-        const laptop = prompt('Do you have a laptop? : ')
-        const brand = prompt('Do you have a laptop? : ')
-        const time_in = prompt('Time in : ')
-        const time_out = prompt('Time out : ')
-
-        const studentData:LogEntries = {
-            Id: 1, 
-            firstName: firstName,
-            lastName: lastName, 
-            program: program,
-            Teacher: teacher,
-            Course: course,
-            Laptop: laptop,
-            LaptopBrand: brand,
-            Time_In: time_in,
-            Time_Out: time_out
-        } 
-        LogBookFunctions.addStudent(studentData)
-        const goAgain = prompt('Would you like to do something else?')
-        if (goAgain.toLowerCase().trim() == 'yes'){
-            Welcome()
-        }else{console.log('Alright then, go your class!!!');
-        }
-        break;
+        option1();
+        // goAgain();
+    break;
 
 
-        case 2 :
-            const Id = parseInt(prompt('Enter the Id number of the student : '))
-            console.log(LogBookFunctions.getStudentById(Id));
-            
-        break;
+    case 2 :
+        const name = prompt('Enter the first name OR last name of the student : ')
+        LogBookFunctions.getStudentById(name);
+        // goAgain();
+    break;
 
     default:
-        break;
+        console.log('Error! Please enter a valid input.');
+        console.log('*');
+    break;
 }
+goAgain()
+
+} while (nums.includes(openingPrompt.toString()));
+
+
+
+
+
+// if(!nums.includes(openingPrompt.toString())){
+//     console.log('Error! Please enter a valid input.');
+//     console.log('*');
+    
+//     let openingPrompt = parseInt(prompt('Input a number to proceed : '))
+
+// }else{}
+
+
+
+
+
+
 
 
 
