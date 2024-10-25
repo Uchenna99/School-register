@@ -5,6 +5,10 @@ import fs from "fs"
 
 
 export class LogBookImplement implements LogBookFunctions {
+    displayAllStudents(): void {
+        const students = this.retrieveFile()
+        students.map((student)=> { console.log(student); } )
+    }
     saveData(Data: any): void {
         const convData = JSON.stringify(Data, null, 2)
         fs.writeFileSync('LogData.json', convData, "utf8")
@@ -42,22 +46,25 @@ export class LogBookImplement implements LogBookFunctions {
         EmpFile.push(studentEntry)
         const jsonData = JSON.stringify(EmpFile, null, 2)
         fs.writeFileSync('LogData.json', jsonData, 'utf-8')
+        console.log('');
         console.log('Info saved successfully!');
         
     }
 
-    removeStudent(Id: number): void {
+    removeStudent(first_name : string, last_name: string): void {
         const Data:LogEntries[] = this.retrieveFile()
-        const check = Data.findIndex((student)=> student.Id === Id)
+        const check = Data.findIndex((student:any)=> (student.firstName?.toLowerCase() === first_name.toLowerCase()) && 
+        (student.lastName.toLowerCase() === last_name.toLowerCase()))
         if(check > -1){
             Data.splice(check, 1)
-            console.log(`Student with Id: ${Id} has been deleted.`);
+            console.log('');
+            console.log(`${first_name} ${last_name} has been deleted.`);
             const convData = JSON.stringify(Data, null, 2)
             fs.writeFileSync('LogData.json', convData, "utf8")
             
-            
         }else{
-            console.log(`Student with Id: ${Id} was not found.`);
+            console.log('');
+            console.log(`${first_name} ${last_name} was not found.`);
         }
     }
 
@@ -69,20 +76,12 @@ export class LogBookImplement implements LogBookFunctions {
             student.lastName?.toLowerCase() == name.toLowerCase() ? foundStudents.push(`${student.firstName} ${student.lastName}`) : '';
         })
         if(foundStudents[0]){
+            console.log('');
             console.log(`Students fond :  ${foundStudents}`);
         }else{
+            console.log('');
             console.log('No student found');
             
         }
-        
-        
-        
-
-        // const foundStudent = Data.find((student)=> student.Id === Id)
-        // if(!foundStudent){
-        //     return `Student with Id: ${Id} does not exist`
-        // }else{
-        //     return foundStudent
-        // }
     }
 }

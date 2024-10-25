@@ -6,6 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogBookImplement = void 0;
 const fs_1 = __importDefault(require("fs"));
 class LogBookImplement {
+    displayAllStudents() {
+        const students = this.retrieveFile();
+        students.map((student) => { console.log(student); });
+    }
     saveData(Data) {
         const convData = JSON.stringify(Data, null, 2);
         fs_1.default.writeFileSync('LogData.json', convData, "utf8");
@@ -39,19 +43,26 @@ class LogBookImplement {
         EmpFile.push(studentEntry);
         const jsonData = JSON.stringify(EmpFile, null, 2);
         fs_1.default.writeFileSync('LogData.json', jsonData, 'utf-8');
+        console.log('');
         console.log('Info saved successfully!');
     }
-    removeStudent(Id) {
+    removeStudent(first_name, last_name) {
         const Data = this.retrieveFile();
-        const check = Data.findIndex((student) => student.Id === Id);
+        const check = Data.findIndex((student) => {
+            var _a;
+            return (((_a = student.firstName) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === first_name.toLowerCase()) &&
+                (student.lastName.toLowerCase() === last_name.toLowerCase());
+        });
         if (check > -1) {
             Data.splice(check, 1);
-            console.log(`Student with Id: ${Id} has been deleted.`);
+            console.log('');
+            console.log(`${first_name} ${last_name} has been deleted.`);
             const convData = JSON.stringify(Data, null, 2);
             fs_1.default.writeFileSync('LogData.json', convData, "utf8");
         }
         else {
-            console.log(`Student with Id: ${Id} was not found.`);
+            console.log('');
+            console.log(`${first_name} ${last_name} was not found.`);
         }
     }
     getStudentById(name) {
@@ -63,17 +74,13 @@ class LogBookImplement {
                 ((_b = student.lastName) === null || _b === void 0 ? void 0 : _b.toLowerCase()) == name.toLowerCase() ? foundStudents.push(`${student.firstName} ${student.lastName}`) : '';
         });
         if (foundStudents[0]) {
+            console.log('');
             console.log(`Students fond :  ${foundStudents}`);
         }
         else {
+            console.log('');
             console.log('No student found');
         }
-        // const foundStudent = Data.find((student)=> student.Id === Id)
-        // if(!foundStudent){
-        //     return `Student with Id: ${Id} does not exist`
-        // }else{
-        //     return foundStudent
-        // }
     }
 }
 exports.LogBookImplement = LogBookImplement;
